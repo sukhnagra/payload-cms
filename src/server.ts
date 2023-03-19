@@ -13,9 +13,10 @@ app.get('/', (_, res) => {
 const start = async () => {
   // Initialize Payload
   console.log(process.env.MONGODB_URI)
+  console.log(`${__dirname}/rds-combined-ca-bundle.pem`)
   await payload.init({
     secret: 'Test',
-    mongoURL: 'mongodb://sukhnagra:password123@sample-cluster.node.us-east-1.docdb.amazonaws.com:27017/payload-cms',
+    mongoURL: 'mongodb://sukhnagra:password123@monogtest.cluster-cad2vos8ppaj.eu-west-2.docdb.amazonaws.com:27017/payload-cms',
     mongoOptions: { useFacet: false,
       tls: true,
       tlsCAFile: `${__dirname}/rds-combined-ca-bundle.pem`},

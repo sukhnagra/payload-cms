@@ -12,7 +12,7 @@ services:
     working_dir: /home/node/app/
     command: sh -c "npm install && npm run dev"
     environment:
-      MONGODB_URI: 'mongodb://sukhnagra:password123@sample-cluster.node.us-east-1.docdb.amazonaws.com:27017/?tls=true'
+      MONGODB_URI: '√/?tls=true'
       PORT: 3000
       NODE_ENV: development
       PAYLOAD_SECRET: TESTING
