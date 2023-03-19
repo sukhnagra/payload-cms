@@ -7,7 +7,7 @@ import Users from './collections/Users';
 import Media from './collections/Media';
 
 export default buildConfig({
-  serverURL: 'http://localhost:3000',
+  serverURL: 'http://ec2-18-130-76-174.eu-west-2.compute.amazonaws.com:3000',
   admin: {
     user: Users.slug,
   },

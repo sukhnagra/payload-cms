@@ -12,21 +12,21 @@ services:
     working_dir: /home/node/app/
     command: sh -c "npm install && npm run dev"
     environment:
-      MONGODB_URI: '√/?tls=true'
+      MONGODB_URI: mongodb://mongo:27017/payload-cms
       PORT: 3000
       NODE_ENV: development
       PAYLOAD_SECRET: TESTING
 
-  # mongo:
-  #   image: mongo:latest
-  #   ports:
-  #     - "27017:27017"
-  #   command:
-  #     - --storageEngine=wiredTiger
-  #   volumes:
-  #     - data:/data/db
-  #   logging:
-  #     driver: none
+  mongo:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    command:
+      - --storageEngine=wiredTiger
+    volumes:
+      - data:/data/db
+    logging:
+      driver: none
 
 volumes:
   data:
