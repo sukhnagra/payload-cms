@@ -1,5 +1,6 @@
 import express from 'express';
 import payload from 'payload';
+import fs from 'fs'
 
 require('dotenv').config();
 const app = express();
@@ -11,6 +12,7 @@ app.get('/', (_, res) => {
 
 const start = async () => {
   // Initialize Payload
+  console.log(process.env.MONGODB_URI)
   await payload.init({
     secret: process.env.PAYLOAD_SECRET,
     mongoURL: process.env.MONGODB_URI,
