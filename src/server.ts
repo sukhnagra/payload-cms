@@ -14,9 +14,10 @@ const start = async () => {
   // Initialize Payload
   console.log(process.env.MONGODB_URI)
   await payload.init({
-    secret: process.env.PAYLOAD_SECRET,
-    mongoURL: process.env.MONGODB_URI,
+    secret: 'Test',
+    mongoURL: 'mongodb://sukhnagra:password123@sample-cluster.node.us-east-1.docdb.amazonaws.com:27017/payload-cms',
     mongoOptions: { useFacet: false,
+      tls: true,
       tlsCAFile: `${__dirname}/rds-combined-ca-bundle.pem`},
     express: app,
     onInit: async () => {
