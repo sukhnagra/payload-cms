@@ -16,7 +16,10 @@ const start = async () => {
   console.log(`${__dirname}/rds-combined-ca-bundle.pem`)
   await payload.init({
     secret: 'Test',
-    mongoURL: 'mongodb://mongo:27017/payload-cms',
+    mongoURL: 'mongodb://sukhnagra:password123@monogtest.cluster-cad2vos8ppaj.eu-west-2.docdb.amazonaws.com:27017/payload-cms',
+    mongoOptions: { useFacet: false,
+      tls: true,
+      tlsCAFile: `${__dirname}/rds-combined-ca-bundle.pem`},
     express: app,
     onInit: async () => {
       payload.logger.info(`Payload Admin URL: ${payload.getAdminURL()}`)
