@@ -5,6 +5,8 @@ on:
     inputs:
       name:
         description: "Enter tag"
+permissions:
+  contents: write        
 
 jobs:
     hello:
