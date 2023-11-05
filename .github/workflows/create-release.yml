@@ -1,0 +1,19 @@
+name: Create release branch
+
+on:
+  workflow_dispatch:
+    inputs:
+      name:
+        description: "Enter tag"
+
+jobs:
+    hello:
+        runs-on: ubuntu-latest
+
+        steps:
+        - name: Verify release branch not exists
+            run: |
+              git fetch --all
+              if git branch -a | grep -q release-${{ steps.dashed_version.outputs.result }}; then exit 1; else exit 0; fi
+        - name: Create release branch
+            run: git fetch --all --tags && git checkout -b release-${{ github.event.inputs.name }} ${{ github.event.inputs.name }} && git push
