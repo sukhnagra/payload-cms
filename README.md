@@ -19,4 +19,4 @@ The 3 typical env vars will be `MONGODB_URI`, `PAYLOAD_SECRET`, and `PAYLOAD_CON
 `docker run --env-file .env -p 3000:3000 my-tag`
 
 
-release test 5
+release test 6
